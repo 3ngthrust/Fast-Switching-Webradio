@@ -9,7 +9,7 @@ Needed Hardware for this project on Thingiverse: http://bit.ly/2rT8PSE
 
 Tested on raspbian. 
 
-Installation:
+## Installation:
 1. Install mpd, mpc and python3.
 
 2. Unzip mpd-config.zip and replace the folder ~/.config/mpd with it. (Included are the configuration files for running the mpd servers in parallel.)
@@ -19,11 +19,11 @@ Warning: If you use mpd to play music and have your own mpd setup on the raspber
 
 4. Copy the two python files on the Raspberry Pi and start the webradio: "python3 webradio_parallel.py"
 
-Hints: 
+## Hints: 
 * Use an external USB soundcard for a better soundquality.
 * Run the python script on startup for ease of use.
 
-Troubleshooting:
+## Troubleshooting:
 * Problem: The Raspberry Pi restarts when the script is starting the mpd-servers. 
 Possible Solution: With all ten mpd-Servers running, the raspberry pi is driven close to 100% CPU load. Make sure your power supply is capable of delivering the necessary current.
 
