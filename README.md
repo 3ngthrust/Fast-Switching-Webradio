@@ -26,6 +26,3 @@ Warning: If you use mpd to play music and have your own mpd setup on the raspber
 ## Troubleshooting:
 * Problem: The Raspberry Pi restarts when the script is starting the mpd-servers. 
 Possible Solution: With all ten mpd-Servers running, the raspberry pi is driven close to 100% CPU load. Make sure your power supply is capable of delivering the necessary current.
-
-* Problem: The Sound stops after a longer period of listening and recovers for a short period after muting and unmuting with button_0.
-Possible Solution: With all ten mpd-Servers running, the raspberry pi is driven close to 100% CPU load. Make sure your CPU is properly cooled with a heatsink.
