@@ -8,7 +8,7 @@ Feel free to contact me on GitHub or Thingiverse if any help is needed.
 Needed Hardware for this project on Thingiverse:
 Tested on raspbian. 
 
-Usage:
+Installation:
 1. Install mpd, mpc and python3.
 
 2. Unzip mpd-config.zip and replace the folder ~/.config/mpd with it. (Included are the configuration files for running the mpd servers in parallel.)
