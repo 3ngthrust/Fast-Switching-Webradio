@@ -5,7 +5,8 @@ This code should be easily adaptable to other interfaces and hardware.
 
 Feel free to contact me on GitHub or Thingiverse if any help is needed.
 
-Needed Hardware for this project on Thingiverse:
+Needed Hardware for this project on Thingiverse: http://bit.ly/2rT8PSE
+
 Tested on raspbian. 
 
 Installation:
