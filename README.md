@@ -25,4 +25,4 @@ Warning: If you use mpd to play music and have your own mpd setup on the raspber
 
 ## Troubleshooting:
 * Problem: The Raspberry Pi restarts when the script is starting the mpd-servers. 
-Possible Solution: With all ten mpd-Servers running, the raspberry pi is driven close to 100% CPU load. Make sure your power supply is capable of delivering the necessary current.
+Possible Solution: With all ten mpd-servers running, the Raspberry Pi is running at high CPU load. Make sure your power supply is capable of delivering the necessary current.
