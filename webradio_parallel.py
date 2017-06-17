@@ -90,22 +90,23 @@ def update_volume(adc, current_station, current_volume):
     else:
         os.system('mpc --host=/home/pi/.config/mpd/socket_' + str(current_station) + ' volume ' + str(new_volume))
         return new_volume    
-        
+
 def toggle_mute_factory(led_0):
-    mute = [] # Small Hack: Empty List = False
+    mute_list = []    # Small Hack: Empty List = False
     
     def toggle_mute():
-        if not mute:
-            os.system('pactl set-sink-volume 0 0%')
-            mute.append(1)
+        if not mute_list:
+            mute_list.append(1)
             led_0.toggle()
-
+            
         else:
-            os.system('pactl set-sink-volume 0 50%')
-            mute.pop()
+            mute_list.pop()
             led_0.toggle()
+            
+    def mute():
+        return bool(mute_list)
 
-    return toggle_mute
+    return toggle_mute, mute
         
 if __name__ == "__main__":
     
@@ -141,7 +142,7 @@ if __name__ == "__main__":
     # Create Functions
     update_station = update_station_faktory(num_of_stations, adc_0)
     update_volume = functools.partial(update_volume, adc_1)
-    toggle_mute = toggle_mute_factory(led_0)
+    toggle_mute, mute = toggle_mute_factory(led_0)
     
     # Assign functions
     button_0.when_pressed = toggle_mute
@@ -149,7 +150,12 @@ if __name__ == "__main__":
     
     try:
         while True:
-            # Main Loop
+            if mute():
+                os.system('mpc --host=/home/pi/.config/mpd/socket_' + str(current_station) + ' volume 0')
+                current_volume = 0
+                while mute():
+                    time.sleep(0.05)
+
             current_station = update_station(current_station, current_volume)
             current_volume = update_volume(current_station, current_volume)
             time.sleep(0.05)
