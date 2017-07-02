@@ -120,7 +120,7 @@ def reload_factory(led_1, num_of_stations):
         
 if __name__ == "__main__":
     
-    #time.sleep(30)  # Wait for wifi connction to be established on startup
+    #time.sleep(25)  # Wait for wifi connction to be established on startup
     
     num_of_stations = 10
     
