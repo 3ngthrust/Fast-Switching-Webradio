@@ -114,7 +114,6 @@ def reload_factory(led_1, num_of_stations):
         
         for i in range(1, num_of_stations + 1):
             os.system('mpc --host=/home/pi/.config/mpd/socket_' + str(i) + ' play ' + str(i)) # iter Socket bzw. mpd server spielt i-ten Eintrag der playlist = i-te Station
-            time.sleep(2)
             
         led_1.toggle()
     return reload
@@ -123,20 +122,15 @@ if __name__ == "__main__":
     
     #time.sleep(30)  # Wait for wifi connction to be established on startup
     
-    num_of_stations = 10
+    num_of_stations = 9
     
     # Start mpd server
     for i in range(1, num_of_stations + 1):
         os.system('mpd /home/pi/.config/mpd/mpd_' + str(i) + '.conf')
-        time.sleep(1)
         os.system('mpc --host=/home/pi/.config/mpd/socket_' + str(i) + ' clear')
-        time.sleep(0.2)
-        os.system('mpc --host=/home/pi/.config/mpd/socket_' + str(i) + ' load webradio_stations')
-        time.sleep(0.2)        
+        os.system('mpc --host=/home/pi/.config/mpd/socket_' + str(i) + ' load webradio_stations')       
         os.system('mpc --host=/home/pi/.config/mpd/socket_' + str(i) + ' volume 0')
-        time.sleep(0.2)
         os.system('mpc --host=/home/pi/.config/mpd/socket_' + str(i) + ' play ' + str(i))
-        time.sleep(2)
         
     print('All mpd servers started')
     
