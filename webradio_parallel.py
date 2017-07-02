@@ -122,7 +122,7 @@ if __name__ == "__main__":
     
     #time.sleep(30)  # Wait for wifi connction to be established on startup
     
-    num_of_stations = 9
+    num_of_stations = 10
     
     # Start mpd server
     for i in range(1, num_of_stations + 1):
